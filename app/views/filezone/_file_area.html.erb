@@ -1,0 +1,13 @@
+<%
+   f ||= nil
+%>
+
+<%= content_tag :div, class: 'dropzone' do %>
+  <%= svg 'files-bg' %><br>
+  <%= content_tag :span, 'Drop your files here' %>
+  
+  <%= f.hidden_field :stored_file_ids, class: 'stored_file_ids', value: @stored_file_ids if @stored_file_ids %>
+  <%= f.hidden_field :cached_file_ids, class: 'cached_file_ids', value: @cached_file_ids %>
+  <%= f.hidden_field :file_names, class: 'file_names', value: @file_names %>
+  <%= f.hidden_field :file_sizes, class: 'file_sizes', value: @file_sizes %>
+<% end %>
